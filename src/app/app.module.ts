@@ -15,6 +15,8 @@ import { reducers, metaReducers } from './store/state';
 import { UserEffects } from './store/effects/user.effect';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { TaskModalComponent } from './component/task-modal/task-modal.component';
+import { TaskComponent } from './component/task/task.component';
+import { DisableOnlyAdmin } from './directives/only-admin.directive';
 
 @NgModule({
   declarations: [
@@ -23,6 +25,8 @@ import { TaskModalComponent } from './component/task-modal/task-modal.component'
     TaskPageComponent,
     LoadingComponent,
     TaskModalComponent,
+    TaskComponent,
+    DisableOnlyAdmin,
   ],
   imports: [
     BrowserModule,

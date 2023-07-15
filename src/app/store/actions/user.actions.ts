@@ -14,3 +14,5 @@ export const loginUserSuccess = createAction(
 export const loginUserError = createAction('[User] Login user error');
 
 export const logoutUser = createAction('[User] Logout user');
+
+export const logoutSuccess = createAction('[User] Logout user success');

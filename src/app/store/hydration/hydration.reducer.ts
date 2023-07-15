@@ -11,9 +11,9 @@ export const hydrationMetaReducer = (
       const storageValue = localStorage.getItem('state');
       if (storageValue) {
         try {
-          const storageValueJson = JSON.parse(storageValue);
-          storageValueJson['userStoreModule']['user'] = initialStateUser;
-          return storageValueJson;
+          // const storageValueJson = JSON.parse(storageValue);
+          // storageValueJson['userStoreModule']['user'] = initialStateUser;
+          return JSON.parse(storageValue);
         } catch {
           localStorage.removeItem('state');
         }

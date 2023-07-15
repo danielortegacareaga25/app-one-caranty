@@ -1,5 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { Task } from 'src/app/interfaces/task.interface';
 
 @Component({
   selector: 'task-modal',
@@ -15,8 +16,10 @@ export class TaskModalComponent {
   ) {}
 
   saveTask(): void {
-    const newTask = {
-      name: this.taskName,
+    const newTask: Task = {
+      id: Date.now(),
+      title: this.taskName,
+      completed: false,
     };
     this.dialogRef.close(newTask);
   }

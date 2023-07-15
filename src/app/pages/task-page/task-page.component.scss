@@ -8,14 +8,30 @@
     align-items: center;
   }
 
+  &-logout {
+    cursor: pointer;
+    display: flex;
+    align-self: flex-end;
+    margin-right: 20px;
+  }
+
   &-button {
     margin-bottom: 40px;
   }
 
   &-table {
-    width: 50%;
-    @media only screen and (max-width: 767px) {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 16px;
+
+    @media screen and (max-width: 1180px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 764px) {
       width: 80%;
+      grid-template-columns: repeat(1, 1fr);
     }
   }
 }

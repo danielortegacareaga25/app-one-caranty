@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, map, throwError, timer } from 'rxjs';
+import { Observable, map, of, throwError, timer } from 'rxjs';
 import { UsersMock } from '../const/users.const';
 import { User } from '../interfaces/user.interface';
 
@@ -19,5 +19,9 @@ export class UserService {
         return userFounded ?? {};
       })
     );
+  }
+
+  logout(): Observable<undefined> {
+    return of(undefined);
   }
 }
