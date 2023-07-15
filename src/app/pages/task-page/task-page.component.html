@@ -1,1 +1,28 @@
-Task page
+
+<div class="tasks-container">
+    <h1>Tareas</h1>
+    <button class="tasks-button" mat-raised-button color="primary" (click)="openTaskModal()">Agregar Tarea</button>
+
+    <div class="tasks-table">
+        
+    <table mat-table [dataSource]="tasks" class="mat-elevation-z8">
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> Id. </th>
+          <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+        </ng-container>
+        <ng-container matColumnDef="titulo">
+          <th mat-header-cell *matHeaderCellDef> Titulo </th>
+          <td mat-cell *matCellDef="let element"> {{element.title}} </td>
+        </ng-container>
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Titulo </th>
+            <td mat-cell *matCellDef="let element"> 
+                <input type="checkbox" name="completed" id="completed" [(ngModel)]="element.completed" (click)="checkboxClicked()">
+                {{element.title}} </td>
+          </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+      
+    </div>
+</div>

@@ -1,0 +1,12 @@
+
+
+<div class="task-modal_container">
+
+    <h2>Agregar Tarea</h2>
+    <mat-form-field>
+        <input matInput placeholder="Nombre de la tarea" [(ngModel)]="taskName">
+    </mat-form-field>
+    <br>
+    <button class="task-modal_btn-save" mat-raised-button color="primary" (click)="saveTask()">Guardar</button>
+    <button mat-raised-button (click)="closeModal()">Cancelar</button>
+</div>
