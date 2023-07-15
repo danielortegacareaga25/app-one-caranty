@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable } from 'rxjs';
+import { Observable, first } from 'rxjs';
 
 import { ROLE, User } from 'src/app/interfaces/user.interface';
-import { selectRole, selectUser } from '../selectors/user.selector';
+import {
+  selectRole,
+  selectUser,
+  selectUserLoading,
+} from '../selectors/user.selector';
 
 import * as UserActions from './../actions/user.actions';
 
@@ -13,9 +17,11 @@ import * as UserActions from './../actions/user.actions';
 export class UserFacade {
   user$: Observable<User | null>;
   userRole$: Observable<ROLE | undefined>;
+  isLoading$: Observable<boolean | undefined>;
   constructor(private store: Store) {
     this.user$ = this.store.select(selectUser);
     this.userRole$ = this.store.select(selectRole);
+    this.isLoading$ = this.store.select(selectUserLoading);
   }
 
   loginUser(username: string, password: string) {

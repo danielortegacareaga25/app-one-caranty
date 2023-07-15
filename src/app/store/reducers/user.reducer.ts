@@ -20,10 +20,12 @@ export const userReducer = createReducer(
   on(UserActions.loginUser, (state) => ({
     ...state,
     errorLogin: false,
+    isLoadingLogin: true,
   })),
   on(UserActions.loginUserSuccess, (state, { user }) => ({
     ...state,
     user,
+    isLoadingLogin: false,
   })),
   on(UserActions.loginUserError, (state) => ({
     ...state,

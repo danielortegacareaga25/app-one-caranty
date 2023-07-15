@@ -27,4 +27,6 @@ export class LoginPageComponent implements OnInit {
       );
     }
   }
+
+  isLoading$ = this._userFacade.isLoading$;
 }
